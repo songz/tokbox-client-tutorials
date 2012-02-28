@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="http://staging.tokbox.com/v0.91/js/TB.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+          var rManager = TB.initRecorderManager('1127');
+          var recorder = rManager.displayRecorder('moderator_token', 'rElement');
+          recorder.addEventListener('archiveSaved', function(event){console.log(event.archives[0].archiveId);});
+          var archiveId = "3c33d990-e7bd-4fec-ba7a-6af1dfd3e062";
+          var player = rManager.displayPlayer( archiveId, "moderator_token" ,"pElement");
+          });
+    </script>
+  </head>
+  <body>
+    <div id="rElement"></div>
+    <div id="pElement"></div>
+  </body>
+</html>
